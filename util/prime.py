@@ -22,7 +22,7 @@ def divisors(n):
 
 @memo
 def is_prime(n):
-    return n > 0 and first_factor(n) == n
+    return n > 1 and first_factor(n) == n
 
 def primes(start=2):
     if start == 2:

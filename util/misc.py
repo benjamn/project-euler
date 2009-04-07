@@ -72,4 +72,6 @@ def amicable(n):
     amicus = sum(divisors(n))
     return n != amicus and n == sum(divisors(amicus))
 
-    
+@memo
+def pandigital(n):
+    return len(set(str(n))) == 9
