@@ -15,7 +15,13 @@ def factors(n):
         factor = first_factor(n)
         yield factor
         n /= factor
-    
+
+def distinct_factors(n):
+    result = set()
+    for f in factors(n):
+        result.add(f)
+    return result
+
 def divisors(n):
     candidates = (i+1 for i in xrange(n / 2))
     return (i for i in candidates if n % i == 0)

@@ -1,4 +1,5 @@
 from dp import memo
+from Queue import deque
 
 def g(*args):
     return (x for x in args)
@@ -21,7 +22,7 @@ def fibs():
         temp = a + b
         a = b
         b = temp
-        
+
 @memo
 def fib(n):
     if n <= 1:
@@ -75,3 +76,12 @@ def amicable(n):
 @memo
 def pandigital(n):
     return len(set(str(n))) == 9
+
+def consecs(gen, stride):
+    d = deque()
+    for n in xrange(stride):
+        d.append(gen.next())
+    while 1:
+        yield [x for x in d]
+        d.popleft()
+        d.append(gen.next())
